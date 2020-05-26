@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InboxComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log(localStorage.getItem("auth"));
+    
+    console.log(localStorage.getItem("id"));
+    console.log(localStorage.getItem("name"));
+    console.log(localStorage.getItem("email"));
+    console.log(localStorage.getItem("token"));
+    
+   }
 
   ngOnInit(): void {
   }
