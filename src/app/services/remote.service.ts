@@ -17,13 +17,13 @@ export class RemoteService {
      this.url = global.url;
     }
 
-    public registrarUsuario(user: User) {     
+    public register(user: User) {     
       let json = {
         name:''+user.name,            
         email:''+user.email,        
         password:''+user.password,
       }
       console.log(json);     
-      return this.datos.post(this.url + 'resgister', json);    
+      return this.datos.post(this.url + 'register', json);    
     }
 }
