@@ -7,14 +7,14 @@
         <div class="card-body py-3">
             <div class="form-group row">
                 <label class="text-light col-3">Email</label>
-                <input type="email" class="form-control col-8" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" #correo>
+                <input type="email" class="form-control col-8" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" #email>
             </div>
             <div class="form-group row">
-                <label class="text-light col-3">Password</label>
-                <input type="password" class="form-control col-8" placeholder="Password" #clave>
+                <label class="text-light col-3">Contraseña</label>
+                <input type="password" class="form-control col-8" placeholder="Password" #pass>
             </div> <br>
 
-            <a type="submit" class="btn btn-warning btn-block text-light pr-1" >Iniciar Sesión</a> <br>
+            <a type="submit" class="btn btn-warning btn-block text-light pr-1" (click)="login(email, pass)">Iniciar Sesión</a> <br>
             <!-- <a type="button" href="editor" class="btn btn-danger btn-block text-light pr-1"><i class="fab fa-google pr-1"></i> Iniciar con Google </a>
             <a type="button" href="evaluador" class="btn btn-primary btn-block text-light pr-1"><i class="fab fa-facebook pr-1"></i> Iniciar con Facebook </a> <br> -->
             <div class="col text-center">

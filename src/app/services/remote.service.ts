@@ -26,4 +26,13 @@ export class RemoteService {
       console.log(json);     
       return this.datos.post(this.url + 'register', json);    
     }
+
+    public login(email:string, password:string) {     
+      let json = {            
+        email:''+email,        
+        password:''+password,
+      }
+      console.log(json);     
+      return this.datos.post(this.url + 'authenticate', json);    
+    }
 }
