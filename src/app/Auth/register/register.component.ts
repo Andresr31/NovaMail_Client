@@ -30,9 +30,10 @@ export class RegisterComponent implements OnInit {
               'success'
             );
 
-            name.value="";
-            email.value="";
-            password.value="";
+            name.value = "";
+            email.value = "";
+            password.value = "";
+            confirmPassword.value = "";
             name.classList.remove("is-valid");
             name.classList.remove("is-invalid");
             email.classList.remove("is-valid");
