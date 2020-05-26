@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { global } from './global';
 import { User } from '../Models/User';
+import { Message } from '../Models/Message';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +49,18 @@ export class RemoteService {
       let headers = new HttpHeaders();
       headers = headers.set('access-token', token);
       return this.datos.get(this.url + 'users',{ headers: headers});    
+    }
+
+    public createMessage(message: Message, token:string){
+      let json = {
+        transmitter:''+message.transmitter,            
+        topic:''+message.topic,        
+        content:''+message.content,
+        receivers:''+message.receiver
+      }
+      console.log(json);
+      let headers = new HttpHeaders();
+      headers = headers.set('access-token', token);    
+      return this.datos.post(this.url + 'message', { headers: headers, body: json});    
     }
 }
