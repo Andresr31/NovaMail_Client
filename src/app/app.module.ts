@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { RemoteService } from './services/remote.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { FormComponent } from './Message/form/form.component';
 import { ShowMessageComponent } from './Message/show-message/show-message.component';
 import { ShowUserComponent } from './User/show-user/show-user.component';
 import { AuthGuardGuard} from './Guards/auth-guard.guard';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { AuthGuardGuard} from './Guards/auth-guard.guard';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,9 +16,14 @@
             <div class="form-group row">
                 <label class="text-light col-3">Contraseña</label>
                 <input type="password" class="form-control col-8" placeholder="Contraseña" #pass>
+            </div> 
+            <div class="form-group row">
+                <label class="text-light col-3">Confirmar contraseña</label>
+                <input type="password" class="form-control col-8" placeholder="Confirmar contraseña" #confPass>
             </div> <br>
 
-            <a type="submit" class="btn btn-warning btn-block text-light pr-1" (click)="entrar(correo,clave)">Registrar</a> <br>
+            <a type="submit" class="btn btn-warning btn-block text-light pr-1" (click)="register(name, email, pass, confPass)">Registrar</a> <br>
+
             <!-- <a type="button" href="editor" class="btn btn-danger btn-block text-light pr-1"><i class="fab fa-google pr-1"></i> Iniciar con Google </a>
             <a type="button" href="evaluador" class="btn btn-primary btn-block text-light pr-1"><i class="fab fa-facebook pr-1"></i> Iniciar con Facebook </a> <br> -->
             <div class="col text-center">
