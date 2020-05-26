@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { global } from './global';
 import { User } from '../Models/User';
 
@@ -34,5 +34,19 @@ export class RemoteService {
       }
       console.log(json);     
       return this.datos.post(this.url + 'authenticate', json);    
+    }
+
+    public getMessagesInbox(id:string,token:string){
+      
+      let headers = new HttpHeaders();
+      headers = headers.set('access-token', token);
+      return this.datos.get(this.url + 'inbox/'+id,{ headers: headers});    
+    }
+
+    public getUsers(token:string){
+      
+      let headers = new HttpHeaders();
+      headers = headers.set('access-token', token);
+      return this.datos.get(this.url + 'users',{ headers: headers});    
     }
 }

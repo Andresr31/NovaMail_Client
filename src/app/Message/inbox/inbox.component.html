@@ -1,1 +1,125 @@
-<p>inbox works!</p>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand mt-2" href="inbox">
+            <h4>NovaMail</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
+
+                <!-- <li class="ml-4 nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorias
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('category.create')}}">Crear</a>
+                        <a class="dropdown-item" href="{{route('category.index')}}">Listar</a>
+                    </div>
+                </li> -->
+            </ul>
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="inbox">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{username}}<span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="login">
+                            Cerrar sesión
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <button class="botonF1">
+            <span>+</span>
+        </button>
+        <nav id="navbarSupportedContent" class=" mt-4 col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column ">
+                    <hr width=100%>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="message/create">
+                            <i class="fas fa-pencil-alt icon pr-2"></i>
+                            Redactar
+                        </a>
+                    </li>
+                    <hr width=100%>
+                    <li class="nav-item ">
+                        <a class="nav-link active " href="inbox">
+                            <i class="fas fa-envelope icon pr-2"></i>
+                            Inbox
+                        </a>
+                    </li>
+                    <hr width=100%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="outbox">
+                            <i class="fas fa-paper-plane icon pr-2"></i>
+                            Outbox
+                        </a>
+                    </li>
+                    <hr width=100%>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="users">
+                            <i class="fas fa-users icon pr-2"></i>
+                            Users
+                        </a>
+                    </li>
+                    <hr width=100%>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="container py-4">
+                <h2 class="text-center my-2 pb-3">Inbox</h2>
+                <div class="table-responsive">
+                    <table class="table table-secondary table-bordered table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Tema</th>
+                                <th>Emisor</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                            </tr>
+                            <tr>
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
