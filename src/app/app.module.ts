@@ -16,6 +16,7 @@ import { CreateComponent } from './Message/create/create.component';
 import { FormComponent } from './Message/form/form.component';
 import { ShowMessageComponent } from './Message/show-message/show-message.component';
 import { ShowUserComponent } from './User/show-user/show-user.component';
+import { AuthGuardGuard} from './Guards/auth-guard.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { ShowUserComponent } from './User/show-user/show-user.component';
     CreateComponent,
     FormComponent,
     ShowMessageComponent,
-    ShowUserComponent
+    ShowUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,17 +13,18 @@ import { CreateComponent } from './Message/create/create.component';
 import { FormComponent } from './Message/form/form.component';
 import { ShowMessageComponent } from './Message/show-message/show-message.component';
 import { ShowUserComponent } from './User/show-user/show-user.component';
+import { AuthGuardGuard} from './Guards/auth-guard.guard';
 
 const routes: Routes = [{ path: '', component: WelcomeComponent },
                         { path: 'login', component: LoginComponent },
                         { path: 'register', component: RegisterComponent },
-                        { path: 'inbox', component: InboxComponent },
-                        { path: 'outbox', component: OutboxComponent },
-                        { path: 'home', component: IndexComponent },
-                        { path: 'message/show', component: ShowMessageComponent },
-                        { path: 'user', component: ShowUserComponent},
-                        { path: 'message/create', component: CreateComponent },
-                        { path: 'user/edit', component: EditComponent }];
+                        { path: 'inbox', component: InboxComponent, canActivate:[AuthGuardGuard]},
+                        { path: 'outbox', component: OutboxComponent,canActivate:[AuthGuardGuard] },
+                        { path: 'home', component: IndexComponent,canActivate:[AuthGuardGuard] },
+                        { path: 'message/show', component: ShowMessageComponent,canActivate:[AuthGuardGuard] },
+                        { path: 'user', component: ShowUserComponent,canActivate:[AuthGuardGuard]},
+                        { path: 'message/create', component: CreateComponent,canActivate:[AuthGuardGuard] },
+                        { path: 'user/edit', component: EditComponent,canActivate:[AuthGuardGuard] }];
 
 
 @NgModule({
