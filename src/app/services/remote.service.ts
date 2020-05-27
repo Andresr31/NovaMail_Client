@@ -44,6 +44,13 @@ export class RemoteService {
       return this.datos.get(this.url + 'inbox/'+id,{ headers: headers});    
     }
 
+    public show(id:string,token:string){
+      
+      let headers = new HttpHeaders();
+      headers = headers.set('access-token', token);
+      return this.datos.get(this.url + 'inbox/'+id,{ headers: headers});    
+    }
+
     public getMessagesOutbox(id:string,token:string){
       
       let headers = new HttpHeaders();

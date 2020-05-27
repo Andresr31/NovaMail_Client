@@ -44,4 +44,9 @@ export class InboxComponent implements OnInit {
 
   }
 
+  public verMensaje(id:string){
+    localStorage.setItem("idM",id);
+    document.location.href="message/show";
+  }
+
 }
