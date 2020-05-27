@@ -14,7 +14,7 @@ export class ShowMessageComponent implements OnInit {
   public email: string;
   public token: string;
 
-  public message: Message;
+  public message: any;
 
   public idM:string;
 
@@ -31,7 +31,15 @@ export class ShowMessageComponent implements OnInit {
   }
 
   public showMessage(){
-      
+      this.remote.show(this.idM,this.token).subscribe(
+        response => {
+          console.log(response);
+          this.message = response;
+        },
+        error => {
+          console.log(<any>error);
+        }
+      );
   }
 
 }
