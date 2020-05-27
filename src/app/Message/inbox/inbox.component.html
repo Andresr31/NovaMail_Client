@@ -50,9 +50,9 @@
 <div class="container-fluid">
     <div class="row">
 
-        <button class="botonF1">
+        <a href="message/create" class="botonF1 btn">
             <span>+</span>
-        </button>
+        </a>
         <nav id="navbarSupportedContent" class=" mt-4 col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-column ">
@@ -99,22 +99,19 @@
                                 <th>Tema</th>
                                 <th>Emisor</th>
                                 <th>Fecha</th>
+                                <th>Visto</th>
+                                <th>Eliminado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-
-                                <td>Lorem</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem</td>
-                                <td>ipsum</td>
-                                <td>dolor</td>
-                                <td>sit</td>
+                            <tr *ngFor="let message of messages; let i = index ">
+                                <th>{{message['message'].topic}}</th>
+                                <th>{{message['transmitter'].email}}</th>
+                                <th>{{message['message'].createdAt}}</th>
+                                <th>{{message['message'].statusDeleted}}</th>
+                                <th>{{message['message'].statusReceived}}</th>
+                                <th><a href="message/show"><i class="fas fa-eye icon mr-2"></i></a><a href="#"><i class="fas fa-trash-alt icon"></i></a></th>
                             </tr>
                         </tbody>
                     </table>

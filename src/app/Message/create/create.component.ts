@@ -33,8 +33,13 @@ export class CreateComponent implements OnInit {
       var statusReceived = "false";
       var statusDeleted = "false";
       var receiversSplit = receivers.value.split(",");
+      var r = []
+      receiversSplit.forEach(element => {
+        r.push(element);
+      });
+      
       //console.log(receiversSplit);
-      var message = new Message(transmitter.value, receiversSplit, topic.value, content.value, statusReceived, statusDeleted);
+      var message = new Message(this.id, r, topic.value, content.value, statusReceived, statusDeleted);
       this.remote.createMessage(message, this.token).subscribe(
         response => {
           console.log(response);

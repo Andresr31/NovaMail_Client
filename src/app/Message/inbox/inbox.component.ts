@@ -15,7 +15,7 @@ export class InboxComponent implements OnInit {
   public email:string;
   public token: string;
 
-  public message:Message[];
+  public messages:any;
 
   constructor(private remote: RemoteService) {
     this.username = localStorage.getItem("name");
@@ -34,7 +34,7 @@ export class InboxComponent implements OnInit {
     this.remote.getMessagesInbox(this.id, this.token).subscribe(
       response => {
         console.log(response);
-        
+        this.messages = response;
         //
       },
       error => {

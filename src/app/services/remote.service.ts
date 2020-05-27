@@ -44,6 +44,13 @@ export class RemoteService {
       return this.datos.get(this.url + 'inbox/'+id,{ headers: headers});    
     }
 
+    public getMessagesOutbox(id:string,token:string){
+      
+      let headers = new HttpHeaders();
+      headers = headers.set('access-token', token);
+      return this.datos.get(this.url + 'outbox/'+id,{ headers: headers});    
+    }
+
     public getUsers(token:string){
       
       let headers = new HttpHeaders();
@@ -56,11 +63,12 @@ export class RemoteService {
         transmitter:''+message.transmitter,            
         topic:''+message.topic,        
         content:''+message.content,
-        receivers:''+message.receiver
+        receiver:''+message.receiver
       }
       console.log(json);
       let headers = new HttpHeaders();
       headers = headers.set('access-token', token);    
-      return this.datos.post(this.url + 'message', { headers: headers, body: json});    
+      return this.datos.post(this.url + 'message',json, { headers: headers});    
     }
+
 }
